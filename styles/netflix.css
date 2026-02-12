@@ -1,0 +1,336 @@
+/* ============================================
+   LICITAFLIX — Netflix Dark Theme CSS
+   ============================================ */
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ---- Global ---- */
+html, body, [data-testid="stAppViewContainer"] {
+    font-family: 'Inter', sans-serif !important;
+    background-color: #141414 !important;
+    color: #E5E5E5 !important;
+}
+
+[data-testid="stHeader"] {
+    background-color: rgba(20, 20, 20, 0.95) !important;
+    backdrop-filter: blur(10px);
+}
+
+[data-testid="stSidebar"] {
+    background-color: #1a1a1a !important;
+    border-right: 1px solid #2a2a2a;
+}
+
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p {
+    color: #b3b3b3 !important;
+}
+
+/* ---- Hide Streamlit branding ---- */
+#MainMenu, footer, header[data-testid="stHeader"] > div:first-child {
+    visibility: hidden;
+}
+
+/* ---- Metric cards ---- */
+[data-testid="stMetric"] {
+    background: linear-gradient(145deg, #1e1e2e, #1a1a2e);
+    border: 1px solid #2a2a3a;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+[data-testid="stMetricValue"] {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+}
+
+[data-testid="stMetricLabel"] {
+    color: #b3b3b3 !important;
+    font-size: 0.85rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+[data-testid="stMetricDelta"] svg {
+    display: none;
+}
+
+/* ---- Netflix Card Component ---- */
+.netflix-card {
+    background: linear-gradient(145deg, #1a1a2e, #16213e);
+    border-radius: 8px;
+    padding: 18px;
+    border-left: 4px solid #E50914;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    min-height: 180px;
+    position: relative;
+    overflow: hidden;
+}
+
+.netflix-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(229, 9, 20, 0.25);
+    border-left-color: #ff3333;
+}
+
+.netflix-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #E50914, #ff6b00, #E50914);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.netflix-card:hover::before {
+    opacity: 1;
+}
+
+.netflix-card .card-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.netflix-card .card-value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #4ade80;
+    margin-bottom: 6px;
+}
+
+.netflix-card .card-meta {
+    font-size: 0.78rem;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+.netflix-card .card-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Badge variants */
+.badge-urgente { background: #E50914; color: #fff; }
+.badge-alta { background: #FF6B00; color: #fff; }
+.badge-normal { background: #0D7377; color: #fff; }
+.badge-baixa { background: #333; color: #999; }
+.badge-produto { background: #7c3aed; color: #fff; }
+.badge-obra { background: #d97706; color: #fff; }
+.badge-reforma { background: #0891b2; color: #fff; }
+
+/* Status badges */
+.badge-nova { background: #3b82f6; color: #fff; }
+.badge-analisando { background: #f59e0b; color: #000; }
+.badge-participar { background: #10b981; color: #fff; }
+.badge-descartada { background: #6b7280; color: #fff; }
+.badge-ganha { background: #22c55e; color: #fff; }
+.badge-perdida { background: #ef4444; color: #fff; }
+
+/* ---- Row/Carousel titles ---- */
+.row-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 24px 0 12px 0;
+    padding-left: 4px;
+}
+
+.row-subtitle {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 16px;
+}
+
+/* ---- Buttons ---- */
+.stButton > button {
+    background: linear-gradient(135deg, #E50914, #b20710) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    padding: 8px 24px !important;
+    transition: all 0.3s !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.85rem !important;
+}
+
+.stButton > button:hover {
+    background: linear-gradient(135deg, #ff1a1a, #E50914) !important;
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Secondary buttons */
+.stButton > button[kind="secondary"] {
+    background: transparent !important;
+    border: 1px solid #444 !important;
+    color: #ccc !important;
+}
+
+/* ---- Tabs ---- */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.stTabs [data-baseweb="tab"] {
+    border-radius: 6px;
+    color: #888;
+    font-weight: 500;
+}
+
+.stTabs [aria-selected="true"] {
+    background-color: #E50914 !important;
+    color: white !important;
+}
+
+/* ---- Dataframes / Tables ---- */
+[data-testid="stDataFrame"] {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* ---- Expander ---- */
+[data-testid="stExpander"] {
+    background-color: #1e1e2e !important;
+    border: 1px solid #2a2a3a !important;
+    border-radius: 8px !important;
+}
+
+/* ---- Text inputs ---- */
+.stTextInput > div > div > input {
+    background-color: #2a2a2a !important;
+    border: 1px solid #444 !important;
+    color: #e5e5e5 !important;
+    border-radius: 6px !important;
+}
+
+.stSelectbox > div > div {
+    background-color: #2a2a2a !important;
+    border: 1px solid #444 !important;
+}
+
+/* ---- Multiselect ---- */
+.stMultiSelect > div > div {
+    background-color: #2a2a2a !important;
+    border: 1px solid #444 !important;
+}
+
+/* ---- Progress bar ---- */
+.stProgress > div > div > div {
+    background: linear-gradient(90deg, #E50914, #ff6b00) !important;
+}
+
+/* ---- Search hero ---- */
+.search-hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #0f0f23 50%, #1a0a0a 100%);
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 24px;
+    border: 1px solid #2a2a3a;
+    text-align: center;
+}
+
+.search-hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #E50914, #ff6b00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
+
+/* ---- Logo ---- */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #E50914, #ff6b00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
+/* ---- Toggle Cards (search selector) ---- */
+.toggle-card {
+    background: #1e1e2e;
+    border: 1px solid #2a2a3a;
+    border-radius: 10px;
+    padding: 16px;
+    transition: all 0.3s;
+}
+
+.toggle-card.active {
+    border-color: #E50914;
+    box-shadow: 0 0 15px rgba(229, 9, 20, 0.15);
+}
+
+/* ---- Animations ---- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
