@@ -124,7 +124,7 @@ try:
             "Resultados": h.get("total_resultados", 0),
             "Úteis": h.get("resultados_uteis", 0),
         } for h in historico])
-        st.dataframe(df, use_container_width=True, hide_index=True)
+        st.dataframe(df, width="stretch", hide_index=True)
     else:
         st.caption("Nenhuma busca registrada ainda.")
 

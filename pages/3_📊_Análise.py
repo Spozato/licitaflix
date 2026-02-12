@@ -149,19 +149,19 @@ try:
     col_act1, col_act2, col_act3, col_act4 = st.columns(4)
 
     with col_act1:
-        if st.button("🔍 Analisar", type="primary", use_container_width=True):
+        if st.button("🔍 Analisar", type="primary", width="stretch"):
             db.atualizar_status_licitacao(lic_id, "analisando", prioridade_atual)
             st.success("Status: Analisando ✅")
             st.rerun()
 
     with col_act2:
-        if st.button("✅ Participar", use_container_width=True):
+        if st.button("✅ Participar", width="stretch"):
             db.atualizar_status_licitacao(lic_id, "participar", "alta")
             st.success("Status: Participar ✅")
             st.rerun()
 
     with col_act3:
-        if st.button("❌ Descartar", use_container_width=True):
+        if st.button("❌ Descartar", width="stretch"):
             db.atualizar_status_licitacao(lic_id, "descartada", "baixa")
             st.info("Descartada")
             st.rerun()

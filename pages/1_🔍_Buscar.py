@@ -96,7 +96,7 @@ try:
 
     st.markdown(f"### 🎯 {len(perfis_selecionados)} perfis selecionados · ~{total_termos} termos")
 
-    if st.button(f"🚀 BUSCAR SELECIONADOS", type="primary", use_container_width=True):
+    if st.button(f"🚀 BUSCAR SELECIONADOS", type="primary", width="stretch"):
         engine = SearchEngine()
         
         progress_bar = st.progress(0)
