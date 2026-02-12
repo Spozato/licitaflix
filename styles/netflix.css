@@ -27,8 +27,13 @@ html, body, [data-testid="stAppViewContainer"] {
 }
 
 /* ---- Hide Streamlit branding ---- */
-#MainMenu, footer, header[data-testid="stHeader"] > div:first-child {
+#MainMenu, footer {
     visibility: hidden;
+}
+
+[data-testid="stSidebarCollapsedControl"] {
+    display: block !important;
+    color: white !important;
 }
 
 /* ---- Metric cards ---- */
